@@ -55,13 +55,13 @@ export function isBetween (num, x, y) {
               type: 'steppers',
               getIcon() {
                   return (
-                    <Viwe>
+                    <View>
                         <MaterialIcons
                             name='directions-run'
                             color={'black'}
                             size={35}
                         />
-                    </Viwe>
+                    </View>
                   )
               }
           },
@@ -73,13 +73,13 @@ export function isBetween (num, x, y) {
             type: 'steppers',
             getIcon() {
                 return (
-                  <Viwe>
+                  <View>
                       <MaterialCommunityIcons
                           name='bike'
                           color={'black'}
                           size={35}
                       />
-                  </Viwe>
+                  </View>
                 )
             }
           },
@@ -91,13 +91,13 @@ export function isBetween (num, x, y) {
             type: 'steppers',
             getIcon() {
                 return (
-                  <Viwe>
+                  <View>
                       <MaterialCommunityIcons
                           name='swim'
                           color={'black'}
                           size={35}
                       />
-                  </Viwe>
+                  </View>
                 )
             }
           },
@@ -109,13 +109,13 @@ export function isBetween (num, x, y) {
             type: 'slider',
             getIcon() {
                 return (
-                  <Viwe>
+                  <View>
                       <FontAwesome
                           name='bed'
                           color={'black'}
                           size={35}
                       />
-                  </Viwe>
+                  </View>
                 )
             }
           },
@@ -127,13 +127,13 @@ export function isBetween (num, x, y) {
             type: 'slider',
             getIcon() {
                 return (
-                  <Viwe>
+                  <View>
                       <MaterialCommunityIcons
                           name='food'
                           color={'black'}
                           size={35}
                       />
-                  </Viwe>
+                  </View>
                 )
             }
           }
