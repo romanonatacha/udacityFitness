@@ -1,3 +1,8 @@
+import React from 'react'
+import { View } from 'react-native'
+import { FontAwesome, MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons'
+import { white } from './colors'
+
 export function isBetween (num, x, y) {
     if (num >= x && num <= y) {
       return true
@@ -38,4 +43,103 @@ export function isBetween (num, x, y) {
     const date = new Date(time)
     const todayUTC = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()))
     return todayUTC.toISOString().split('T')[0]
+  }
+
+  export function getMetricMetaInfo (metric) {
+      const info = {
+          run: {
+              displayName: 'run',
+              max: 50,
+              unit: 'miles',
+              step: 1,
+              type: 'steppers',
+              getIcon() {
+                  return (
+                    <Viwe>
+                        <MaterialIcons
+                            name='directions-run'
+                            color={'black'}
+                            size={35}
+                        />
+                    </Viwe>
+                  )
+              }
+          },
+          bike: {
+            displayName: 'bike',
+            max: 100,
+            unit: 'miles',
+            step: 1,
+            type: 'steppers',
+            getIcon() {
+                return (
+                  <Viwe>
+                      <MaterialCommunityIcons
+                          name='bike'
+                          color={'black'}
+                          size={35}
+                      />
+                  </Viwe>
+                )
+            }
+          },
+          swim: {
+            displayName: 'swim',
+            max: 9900,
+            unit: 'meters',
+            step: 100,
+            type: 'steppers',
+            getIcon() {
+                return (
+                  <Viwe>
+                      <MaterialCommunityIcons
+                          name='swim'
+                          color={'black'}
+                          size={35}
+                      />
+                  </Viwe>
+                )
+            }
+          },
+          sleep: {
+            displayName: 'sleep',
+            max: 24,
+            unit: 'hours',
+            step: 1,
+            type: 'slider',
+            getIcon() {
+                return (
+                  <Viwe>
+                      <FontAwesome
+                          name='bed'
+                          color={'black'}
+                          size={35}
+                      />
+                  </Viwe>
+                )
+            }
+          },
+          eat: {
+            displayName: 'eat',
+            max: 10,
+            unit: 'rating',
+            step: 1,
+            type: 'slider',
+            getIcon() {
+                return (
+                  <Viwe>
+                      <MaterialCommunityIcons
+                          name='food'
+                          color={'black'}
+                          size={35}
+                      />
+                  </Viwe>
+                )
+            }
+          }
+      }
+
+      return typeof metric === 'undefined'
+        ? info
+        : info [metric]
   }
