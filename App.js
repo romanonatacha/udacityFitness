@@ -60,6 +60,9 @@ const tabNavigatorConfig = {
     }
   }
 }
+const Tabs = Platform.OS === 'ios'
+  ? createBottomTabNavigator(RouteConfigs, tabNavigatorConfig)
+  : createMaterialTopTabNavigator(RouteConfigs, tabNavigatorConfig)
 
 const MainNavigator = createAppContainer(
   createStackNavigator({
@@ -80,10 +83,6 @@ const MainNavigator = createAppContainer(
     }
   })
 )
-
-const Tabs = Platform.OS === 'ios'
-  ? createBottomTabNavigator(RouteConfigs, tabNavigatorConfig)
-  : createMaterialTopTabNavigator(RouteConfigs, tabNavigatorConfig)
 
 
 export default class App extends Component {
