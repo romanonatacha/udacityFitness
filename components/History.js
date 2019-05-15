@@ -9,6 +9,7 @@ import { white } from '../utils/colors'
 import DateHeader from './DateHeader'
 import MetricCard from './MetricCard'
 import { AppLoading } from 'expo'
+import EntryDetail from './EntryDetail';
 
 class History extends Component {
     state = {
@@ -38,7 +39,10 @@ class History extends Component {
                         {today}
                     </Text>
                 </View>
-                : <TouchableOpacity onPress={() => console.log('pressed')}>
+                : <TouchableOpacity onPress={() => this.props.navigation.navigate(
+                    'EntryDetail',
+                    {  entryId: key }
+                )}>
                     <MetricCard metrics={metrics} date={formattedDate} />
                 </TouchableOpacity>
             }
